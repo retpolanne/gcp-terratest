@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: .gitignore
+  checksum: 90ce6511216873d1a087429cdc4c3187d02e713aa5bb6141cd19b835c6057bcb
+version: ""
