@@ -9,3 +9,15 @@ If you're on a Mac, use `brew bundle` and this will install:
 - Terraform
 - Golang
 - Google Cloud SDK
+
+## Logging in with gcloud
+
+```sh
+gcloud auth login
+```
+
+## Running tests
+
+```sh
+go test ./...
+```
