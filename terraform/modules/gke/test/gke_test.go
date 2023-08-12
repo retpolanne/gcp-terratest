@@ -27,6 +27,10 @@ func TestMain(m *testing.M) {
 	os.Exit(code)
 }
 
-func TestHelloWorld(t *testing.T) {
+func TestGKEWithPrometheusNodePool(t *testing.T) {
+	t.Fatal("not implemented")
+}
+
+func TestGKEWithAnthos(t *testing.T) {
 	t.Fatal("not implemented")
 }
