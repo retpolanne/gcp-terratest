@@ -14,6 +14,7 @@ If you're on a Mac, use `brew bundle` and this will install:
 
 ```sh
 gcloud auth login
+gcloud auth application-default login
 ```
 
 ## Running tests
