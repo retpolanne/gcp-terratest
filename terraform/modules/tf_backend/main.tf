@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "tf_backend" {
-  name          = "annemacedo-tf-backend-demo"
+  name          = var.backend_bucket_name
   location      = "US"
   force_destroy = true
 

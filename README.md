@@ -20,5 +20,5 @@ gcloud auth application-default login
 ## Running tests
 
 ```sh
-go test ./...
+go test -v ./...
 ```
