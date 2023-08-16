@@ -22,6 +22,6 @@ module "gke_auth" {
 
 resource "local_file" "kubeconfig" {
 	content    = module.gke_auth.kubeconfig_raw
-  filename   = "../../kubeconfig" 
+  filename   = "${path.module}/../../kubeconfig" 
   depends_on = [module.gke_auth]
 }

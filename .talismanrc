@@ -7,4 +7,6 @@ fileignoreconfig:
   checksum: ab98ae2b015da30f93ceedbd41fdc5ddfdae97ab0edadabc617e99dc9cc8724b
 - filename: terraform/.terraform.lock.hcl
   checksum: b798380e5d62fd7367695e531d2b20bb1bf63bf6b77774162e209b919be4f789
+- filename: go.sum
+  checksum: 25fe72f9d2e5c3ce54931cd6f706dac7e4c33c20452b1c3c639d621b56cf0d4e
 version: ""
