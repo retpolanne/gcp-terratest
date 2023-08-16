@@ -91,13 +91,16 @@ func TestGKEHasPrometheusNodePool(t *testing.T) {
 	gke := getCluster(t)
 	require.NotNil(t, gke)
 	prometheusNPFound := false
+	nodeConfigLabels := map[string]string{}
 	for _, nodePool := range gke.NodePools {
 		if nodePool.Name == "prometheus" {
 			prometheusNPFound = true
+			nodeConfigLabels = nodePool.Config.Labels
 			break
 		}
 	}
 	assert.True(t, prometheusNPFound)
+	assert.Equal(t, "prometheus", nodeConfigLabels["monitoring"])
 }
 
 func TestGKEHasPrometheusInstalled(t *testing.T) {

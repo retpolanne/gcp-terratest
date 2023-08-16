@@ -41,3 +41,6 @@ Brewfile.lock.json
 
 # kubeconfig
 kubeconfig
+
+# VIM .swp
+*.swp

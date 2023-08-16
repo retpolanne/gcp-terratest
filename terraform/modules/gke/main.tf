@@ -10,6 +10,17 @@ module "gke" {
   subnetwork        = var.subnet_name
   ip_range_pods     = "terratest-gke-pods"
   ip_range_services = "terratest-gke-services"
+
+  node_pools = [
+    {
+      name         = "default-np"
+      machine_type = "e2-medium"
+      min_count    = 1
+    },
+    {
+      name = "prometheus"
+    }
+  ]
 }
 
 module "gke_auth" {
