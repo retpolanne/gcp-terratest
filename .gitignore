@@ -38,3 +38,6 @@ Brewfile.lock.json
 
 # dotenv
 .env
+
+# kubeconfig
+kubeconfig

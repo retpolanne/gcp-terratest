@@ -1,4 +1,4 @@
-# GKE Module
+# VPC Module
 
 Please set these environment variables: 
 

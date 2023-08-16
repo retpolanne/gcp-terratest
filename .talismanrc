@@ -1,4 +1,10 @@
 fileignoreconfig:
 - filename: .gitignore
   checksum: 90ce6511216873d1a087429cdc4c3187d02e713aa5bb6141cd19b835c6057bcb
+- filename: terraform/modules/gke/.terraform.lock.hcl
+  checksum: 0224ebb6fa0989c77125fa89fa3fbdf9e996fcc7a2b43bf0accbfb59d339e3ab
+- filename: terraform/modules/vpc/.terraform.lock.hcl
+  checksum: ab98ae2b015da30f93ceedbd41fdc5ddfdae97ab0edadabc617e99dc9cc8724b
+- filename: terraform/.terraform.lock.hcl
+  checksum: b798380e5d62fd7367695e531d2b20bb1bf63bf6b77774162e209b919be4f789
 version: ""
