@@ -3,7 +3,7 @@ data "google_client_config" "default" {}
 
 module "gke" {
   source  		      = "terraform-google-modules/kubernetes-engine/google"
-	project_id 	      = var.project_id
+  project_id 	      = var.project_id
   name              = var.cluster_name
   region            = "us-east1"
   network           = var.vpc_name
@@ -24,7 +24,7 @@ module "gke" {
 }
 
 module "gke_auth" {
-	source       = "terraform-google-modules/kubernetes-engine/google//modules/auth"
+  source       = "terraform-google-modules/kubernetes-engine/google//modules/auth"
   project_id   = var.project_id
   cluster_name = var.cluster_name
   location     = module.gke.location
@@ -32,7 +32,7 @@ module "gke_auth" {
 }
 
 resource "local_file" "kubeconfig" {
-	content    = module.gke_auth.kubeconfig_raw
+  content    = module.gke_auth.kubeconfig_raw
   filename   = "${path.module}/../../kubeconfig" 
   depends_on = [module.gke_auth]
 }
