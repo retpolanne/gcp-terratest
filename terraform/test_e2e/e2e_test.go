@@ -91,16 +91,23 @@ func TestGKEHasPrometheusNodePool(t *testing.T) {
 	gke := getCluster(t)
 	require.NotNil(t, gke)
 	prometheusNPFound := false
-	nodeConfigLabels := map[string]string{}
+	var nodeTaint *containerpb.NodeTaint
 	for _, nodePool := range gke.NodePools {
 		if nodePool.Name == "prometheus" {
 			prometheusNPFound = true
-			nodeConfigLabels = nodePool.Config.Labels
+			nodeTaints := nodePool.Config.Taints
+			for _, taint := range nodeTaints {
+				if taint.Key == "monitoring" {
+					nodeTaint = taint
+				}
+			}
 			break
 		}
 	}
 	assert.True(t, prometheusNPFound)
-	assert.Equal(t, "prometheus", nodeConfigLabels["monitoring"])
+	require.NotNil(t, nodeTaint)
+	assert.Equal(t, "NO_SCHEDULE", nodeTaint.Effect)
+	assert.Equal(t, "prometheus", nodeTaint.Value)
 }
 
 func TestGKEHasPrometheusInstalled(t *testing.T) {
